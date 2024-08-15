@@ -22,7 +22,7 @@ public class FibonacciTest {
 
         // Тест рекурсивного метода
         startTime = System.nanoTime();
-        result = Fibonacci.fibonacciIterative(n);
+        result = Fibonacci.fibonacciRecursive(n);
         endTime = System.nanoTime();
         durationTime = endTime - startTime;
         System.out.println(STR."Iterative method result: \{result}");
@@ -30,7 +30,7 @@ public class FibonacciTest {
 
         // Тест метода динамического программирования
         startTime = System.nanoTime();
-        result = Fibonacci.fibonacciIterative(n);
+        result = Fibonacci.fibonacciDP(n);
         endTime = System.nanoTime();
         durationTime = endTime - startTime;
         System.out.println(STR."Iterative method result: \{result}");
