@@ -2,9 +2,20 @@ package ua.goit;
 
 import java.math.BigInteger;
 
+
+/**
+ * Клас для обчислення чисел Фібоначчі трьома методами:
+ * 1. Ітераційний метод
+ * 2. Рекурсивний метод
+ * 3. Метод динамічного програмування
+ */
 public class Fibonacci {
 
-    // Итеративный метод
+    /**
+     * Ітераційний метод
+     * Часова складність: O(n)
+     * Просторова складність: O(1)
+     */
     public static BigInteger fibonacciIterative(int n) {
         if (n <= 1) {
             return BigInteger.valueOf(n);
@@ -22,7 +33,11 @@ public class Fibonacci {
         return curr;
     }
 
-    // Рекурсивный метод
+    /**
+     * Рекурсивний метод
+     * Часова складність: O(2^n)
+     * Просторова складність: O(n) (виклики стека)
+     */
     public static BigInteger fibonacciRecursive(int n) {
         if (n <= 1) {
             return BigInteger.valueOf(n);
@@ -30,7 +45,11 @@ public class Fibonacci {
         return fibonacciRecursive(n - 1).add(fibonacciRecursive(n - 2));
     }
 
-    // Метод динамического программирования
+    /**
+     * Метод динамічного програмування
+     * Часова складність: O(n)
+     * Просторова складність: O(n)
+     */
     public static BigInteger fibonacciDP(int n) {
         if (n <= 1) {
             return BigInteger.valueOf(n);
@@ -47,4 +66,5 @@ public class Fibonacci {
         return fib[n];
     }
 }
+
 

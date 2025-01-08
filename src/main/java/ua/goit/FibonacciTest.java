@@ -3,38 +3,25 @@ package ua.goit;
 import java.math.BigInteger;
 
 public class FibonacciTest {
-
     public static void main(String[] args) {
-        long startTime;
-        long endTime;
-        BigInteger result;
-        long durationTime;
+        int n = 35; // Приклад для n = 25
 
-        int n = 40; // Измените это значение для тестирования разных входных данных
+        long startTime = System.currentTimeMillis();
+        BigInteger iterativeResult = Fibonacci.fibonacciIterative(n);
+        long endTime = System.currentTimeMillis();
+        System.out.println("Ітераційний метод: " + iterativeResult);
+        System.out.println("Час виконання (Ітераційний метод): " + (endTime - startTime) + " мс");
 
-        // Тест итеративного метода
-        startTime = System.nanoTime();
-        result = Fibonacci.fibonacciIterative(n);
-        endTime = System.nanoTime();
-        durationTime = endTime - startTime;
-        System.out.println(STR."Iterative method result: \{result}");
-        System.out.println(STR."Iterative method time: \{durationTime} ns\n");
+        startTime = System.currentTimeMillis();
+        BigInteger recursiveResult = Fibonacci.fibonacciRecursive(n);
+        endTime = System.currentTimeMillis();
+        System.out.println("Рекурсивний метод: " + recursiveResult);
+        System.out.println("Час виконання (Рекурсивний метод): " + (endTime - startTime) + " мс");
 
-        // Тест рекурсивного метода
-        startTime = System.nanoTime();
-        result = Fibonacci.fibonacciRecursive(n);
-        endTime = System.nanoTime();
-        durationTime = endTime - startTime;
-        System.out.println(STR."Iterative method result: \{result}");
-        System.out.println(STR."Iterative method time: \{durationTime} ns\n");
-
-        // Тест метода динамического программирования
-        startTime = System.nanoTime();
-        result = Fibonacci.fibonacciDP(n);
-        endTime = System.nanoTime();
-        durationTime = endTime - startTime;
-        System.out.println(STR."Iterative method result: \{result}");
-        System.out.println(STR."Iterative method time: \{durationTime} ns\n");
+        startTime = System.currentTimeMillis();
+        BigInteger dpResult = Fibonacci.fibonacciDP(n);
+        endTime = System.currentTimeMillis();
+        System.out.println("Динамічне програмування: " + dpResult);
+        System.out.println("Час виконання (Динамічне програмування): " + (endTime - startTime) + " мс");
     }
 }
-
